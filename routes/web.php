@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Stripe\StripeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('stripe' , [StripeController::class  , 'stripe']);
+Route::get('stripe' , [StripeController::class  , 'stripePost'])->name('stripe.post');
